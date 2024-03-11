@@ -1,4 +1,4 @@
-Project Overview: Automating Monthly Billing and Emailing
+# Project: Automating Monthly Billing and Emailing
 
 Objective: The goal of this project is to automate the process of generating and sending monthly bills and purchase details to customers via email, utilizing Python programming language along with pandas and smtplib libraries.
 
