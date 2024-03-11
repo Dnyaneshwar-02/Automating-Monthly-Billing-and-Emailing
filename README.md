@@ -57,8 +57,8 @@ If successful, it returns the total bill amount. If an error occurs during calcu
 
 C. Email Configuration
 # Email configuration
-email_sender = "rydshoppingmart@gmail.com"
-email_password = "bijh gjzt rhch qosf"  # Update with your email password or use app password
+email_sender = "yourEmail@gmail.com"
+email_password = "A Pasword"  # Update with your email password or use app password
 
 Explanation:
 These lines define the sender's email address (email_sender) and their email password (email_password).
