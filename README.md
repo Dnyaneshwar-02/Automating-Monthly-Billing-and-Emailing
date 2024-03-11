@@ -2,28 +2,28 @@ Project Overview: Automating Monthly Billing and Emailing
 
 Objective: The goal of this project is to automate the process of generating and sending monthly bills and purchase details to customers via email, utilizing Python programming language along with pandas and smtplib libraries.
 
-1. Reading Excel Data
+# Reading Excel Data
 The script begins by defining a function read_excel_data() responsible for reading data from an Excel file. It utilizes the pandas library, a powerful tool for data manipulation and analysis in Python. This function attempts to read the Excel file specified by the file_path parameter and returns a pandas DataFrame containing the data.
 
-2. Generating Bills
+# Generating Bills
 Next, there's a function called generate_bill() designed to calculate the total bill amount for each customer based on their purchase data. This function takes a DataFrame representing customer data as input, calculates the total amount by multiplying the quantity and price columns, and returns the sum of these amounts.
 
-3. Email Configuration
+# Email Configuration
 Email configuration details are specified next, including the sender's email address (email_sender) and their password (email_password). These credentials will be used later for authenticating and sending emails.
 
-5. SMTP Configuration
+# SMTP Configuration
 SMTP (Simple Mail Transfer Protocol) configuration is crucial for sending emails. In this script, the SMTP server details for Gmail are specified (smtp_server and smtp_port). This ensures that emails are sent securely over the internet.
 
-5. Email Content Generation
+# Email Content Generation
 The script then constructs the content of the email to be sent to each customer. It starts by defining an HTML template that includes placeholders for customer-specific data such as the total bill amount and purchase details. This HTML content will be personalized and filled with relevant information for each customer.
 
-6. Sending Emails
+# Sending Emails
 The core functionality of the script lies in sending emails to customers. It iterates over unique customer email addresses extracted from the DataFrame, generates the email content with purchase details, attaches a company logo, and sends the email using SMTP. Proper exception handling is implemented to deal with any errors that may occur during this process.
 
-7. Exception Handling
+# Exception Handling
 To ensure robustness, the script includes comprehensive error handling mechanisms. It catches and handles exceptions that may arise during data reading, bill generation, email construction, or sending. This helps in logging errors and ensuring that the script continues to execute smoothly even in case of unexpected issues.
 
-A. Reading Excel Data
+
 # Function to read data from Excel sheet
 def read_excel_data(file_path):
     try:
@@ -73,14 +73,14 @@ Explanation:
 These lines specify the SMTP server (smtp_server) and port (smtp_port) for Gmail.
 Gmail's SMTP server is used for sending emails securely over the internet.
 
-#Email Content Generation
+# Email Content Generation
 The email content generation involves constructing an HTML template with placeholders for customer-specific data:
 It begins with HTML and CSS styling for the email content, including a table structure for displaying purchase details.
 Customer-specific data such as the total bill amount and purchase details are inserted into the HTML template dynamically.
 A company logo is embedded in the email as an attachment.
 The email also contains a link for customers to make payments.
 
-#Sending Emails
+# Sending Emails
 The main process of sending emails is executed within a loop iterating over unique customer email addresses:
 For each unique email address, purchase data specific to that customer is extracted from the DataFrame.
 The HTML email content is personalized with customer-specific purchase details.
@@ -88,7 +88,7 @@ An email message is created using the EmailMessage class, including the sender, 
 The company logo is attached to the email as a related image.
 Finally, the email is sent using the SMTP server configured with SSL encryption.
 
-#Exception Handling
+# Exception Handling
 except Exception as e:
     print(f"Error sending email to {email}: {e}")
 
