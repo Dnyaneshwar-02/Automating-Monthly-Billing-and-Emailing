@@ -39,7 +39,7 @@ It uses the pandas read_excel() function to read the Excel file and store the da
 If successful, it returns the DataFrame containing the data.
 If an error occurs during reading (e.g., file not found, incorrect format), it catches the exception, prints an error message, and returns None.
 
-B. Generating Bills
+
 # Function to generate bill for each customer
 def generate_bill(customer_data):
     try:
@@ -55,7 +55,7 @@ It takes a DataFrame customer_data containing purchase details of a specific cus
 It multiplies the quantity and price columns to calculate the total amount for each purchase and then sums these amounts to get the total bill amount for the customer.
 If successful, it returns the total bill amount. If an error occurs during calculation, it prints an error message and returns None.
 
-C. Email Configuration
+
 # Email configuration
 email_sender = "yourEmail@gmail.com"
 email_password = "A Pasword"  # Update with your email password or use app password
@@ -64,7 +64,7 @@ Explanation:
 These lines define the sender's email address (email_sender) and their email password (email_password).
 These credentials will be used to authenticate with the SMTP server to send emails.
 
-D. SMTP Configuration
+
 # SMTP Configuration
 smtp_server = 'smtp.gmail.com'
 smtp_port = 465
@@ -73,14 +73,14 @@ Explanation:
 These lines specify the SMTP server (smtp_server) and port (smtp_port) for Gmail.
 Gmail's SMTP server is used for sending emails securely over the internet.
 
-E. Email Content Generation
+#Email Content Generation
 The email content generation involves constructing an HTML template with placeholders for customer-specific data:
 It begins with HTML and CSS styling for the email content, including a table structure for displaying purchase details.
 Customer-specific data such as the total bill amount and purchase details are inserted into the HTML template dynamically.
 A company logo is embedded in the email as an attachment.
 The email also contains a link for customers to make payments.
 
-F. Sending Emails
+#Sending Emails
 The main process of sending emails is executed within a loop iterating over unique customer email addresses:
 For each unique email address, purchase data specific to that customer is extracted from the DataFrame.
 The HTML email content is personalized with customer-specific purchase details.
@@ -88,7 +88,7 @@ An email message is created using the EmailMessage class, including the sender, 
 The company logo is attached to the email as a related image.
 Finally, the email is sent using the SMTP server configured with SSL encryption.
 
-G. Exception Handling
+#Exception Handling
 except Exception as e:
     print(f"Error sending email to {email}: {e}")
 
